@@ -53,13 +53,7 @@
 \RequirePackage{pdfsync} %do pdf synchronization [andy]
 
 \usepackage[closeFloats, noSeparatorLine]{fltpage} %use the custom modified fltpage package
-\RequirePackage{afterpage} 
-
-
-
-
-
- 
+\RequirePackage{afterpage}  
 
 
 \synctex=1 % turn synctex on automatically to sync between pdf viewer [andy]
@@ -69,7 +63,7 @@
 \nobibliography*        
 
 \RequirePackage{lettrine} % big letter at start of chapter
-\RequirePackage[width=6in, letterpaper]{geometry}
+\RequirePackage[width=17cm, a4paper]{geometry}
 
 \RequirePackage{fancyhdr} 
 \pagestyle{plain} % options: empty , plain , fancy
@@ -140,16 +134,17 @@ BoldItalicFont=Arial-BoldItalic
 
 \fancypagestyle{firstpage}
 {
+    
     \renewcommand{\headrulewidth}{0pt}%
     \fancyhf{}
     \fancyhead[R]{\@decologo}% Your logo/image
     \fancyhead[L]{
-        \@documenttype \\
-        \@department\\
         \@degreemonth\ \@degreeyear \\
+        \vspace{15pt}
         \theauthor
 	}
-    \fancyfoot[L]{\@schoollogo \@enterpriselogo}% Your logo/image
+    \fancyfoot[L]{\@schoollogo}% Your logo/image
+    \fancyfoot[R]{\@enterpriselogo}% Your logo/image
     
 }
 \renewcommand{\maketitle}{
@@ -157,10 +152,15 @@ BoldItalicFont=Arial-BoldItalic
 	\thispagestyle{firstpage}
 	\renewcommand{\headrulewidth}{0pt}
 	\begin{flushleft}
-	\vspace*{300pt}
+	\vspace*{320pt}
 	\Huge \textcolor{IMTA-Green}{\textbf{\thetitle}} \normalsize \\
-	\vspace{12pt}
-	\lipsum[2]
+	\vspace{15pt}
+	\textcolor{gray}{
+	\Large
+	\@documenttype \\
+	\vspace{10pt}
+    \@department\\
+	}
 	\end{flushleft} 
 	\vspace*{\fill}
 }
