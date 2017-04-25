@@ -165,14 +165,13 @@ BoldItalicFont=Arial-BoldItalic
 	\vspace*{\fill}
 }
 
-% You might also consider licensing your work under Creative Commons). See: http://creativecommons.org/weblog/entry/12824 for other PhD students who have released their work under creative commons.
 
 \newcommand{\copyrightpage}{
 	\newpage \thispagestyle{empty} \vspace*{\fill}
 	\sc \noindent \copyright~\textit{\@degreeyear \hspace{3pt}~- \theauthor} \\
 	\noindent All rights reserved. \\
 	\vspace{10pt}
-	\@university\\ \@universitycity, \@universitystate\\
+	\@university\\ \@universitycity, \@universitystate \\
 	\vspace{5pt}
 	\@enterprise\\ \@enterprisecity, \@enterprisestate\\
 	\vspace*{\fill} \newpage \rm
@@ -191,9 +190,9 @@ BoldItalicFont=Arial-BoldItalic
 	\vspace*{15pt}
 	\sc Abstract \\ \rm
 	\end{center}
-	\doublespace %Harvard registrar requests that abstract is double spaced
+	\doublespace 
 	\input{frontmatter/abstract}
-	\doublespace %Harvard registrar requests that abstract is double spaced	
+	\doublespace 
 	\newpage \lhead{} \rhead{}
 	\cfoot{\thepage}
 	\onehalfspacing
