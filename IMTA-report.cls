@@ -10,11 +10,13 @@
 % --------------------------------------------------------------------
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{IMTA-rapport}
+\ProvidesClass{IMTA-report}
 \LoadClass[12pt, oneside, a4paper]{report}
 
 
 % Required packages
+\RequirePackage{float}
+\RequirePackage{listings}
 \RequirePackage{lipsum}
 \RequirePackage[export]{adjustbox}
 \RequirePackage[francais]{babel}    % Pour la langue française
@@ -35,6 +37,7 @@
 \RequirePackage[small, md, sc]{titlesec}
 \RequirePackage[tight,nice]{units}
 \RequirePackage{verbatim}
+\RequirePackage{numprint}
 
 % colors
 \RequirePackage{color}
@@ -43,7 +46,7 @@
 \definecolor{IMTA-Green}{HTML}{A4D233}
 \RequirePackage{url}
 \RequirePackage[titles]{tocloft}
-\setcounter{tocdepth}{1}
+\setcounter{tocdepth}{3}
 \renewcommand{\cftchapfont}{\normalsize \scshape}
 
 \renewcommand\bibname{References}
@@ -63,7 +66,7 @@
 \nobibliography*        
 
 \RequirePackage{lettrine} % big letter at start of chapter
-\RequirePackage[width=17cm, a4paper]{geometry}
+\RequirePackage[width=16cm, a4paper]{geometry}
 
 \RequirePackage{fancyhdr} 
 \pagestyle{plain} % options: empty , plain , fancy
@@ -95,13 +98,12 @@ BoldItalicFont=Arial-BoldItalic
 ]{Arial}
 
 \RequirePackage{xltxtra,xunicode}
-\defaultfontfeatures{Mapping=tex-text, Numbers=OldStyle}
+\defaultfontfeatures{Mapping=tex-text}
 \aliasfontfeatureoption{Ligatures}{Historic}{Historical}
 \setromanfont
 [Path = fonts/,
 Extension = .ttf,
 Mapping=tex-text, 
-Numbers=OldStyle, 
 Ligatures={Common}, 
 UprightFont=Arial-Regular,
 BoldFont=Arial-Bold,
@@ -112,6 +114,38 @@ BoldItalicFont=Arial-BoldItalic
 %Set fonts for Mac Specific (Comment out on Windows XP)
 %\setsansfont[Scale=MatchLowercase,Mapping=tex-text]{Helvetica Neue} 
 %\setmonofont[Scale=MatchLowercase]{Consolas}
+
+
+
+% code style
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.8}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+ 
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+ 
+\lstset{style=mystyle}
+
+
 
 % some definitions
 \def\degreeyear#1{\gdef\@degreeyear{#1}}
@@ -133,8 +167,8 @@ BoldItalicFont=Arial-BoldItalic
 \def\documenttype#1{\gdef\@documenttype{#1}}
 
 \fancypagestyle{firstpage}
+
 {
-    
     \renewcommand{\headrulewidth}{0pt}%
     \fancyhf{}
     \fancyhead[R]{\@decologo}% Your logo/image
@@ -145,8 +179,8 @@ BoldItalicFont=Arial-BoldItalic
 	}
     \fancyfoot[L]{\@schoollogo}% Your logo/image
     \fancyfoot[R]{\@enterpriselogo}% Your logo/image
-    
 }
+
 \renewcommand{\maketitle}{
 	\singlespacing
 	\thispagestyle{firstpage}
