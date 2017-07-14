@@ -22,6 +22,7 @@
 \RequirePackage[francais]{babel}    % Pour la langue française
 \RequirePackage{graphicx}
 \RequirePackage{hyperref}
+\RequirePackage{ragged2e}
 \hypersetup{
 	linktocpage,
     colorlinks,
