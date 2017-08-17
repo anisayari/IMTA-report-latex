@@ -34,6 +34,7 @@
 
 \RequirePackage[centertags]{amsmath}
 \RequirePackage{amssymb}
+\usepackage{glossaries}
 \RequirePackage[numbers, comma, sort&compress]{natbib}
 \RequirePackage[small, md, sc]{titlesec}
 \RequirePackage[tight,nice]{units}

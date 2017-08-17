@@ -3,6 +3,11 @@
 
 \documentclass{IMTA-report}
 
+%add glossary
+\makeglossaries
+\newglossaryentry{glossary}{
+name={glossary},description={An example of glossary}}
+
 \begin{document}
 
 % the front matter
@@ -30,6 +35,8 @@
 \bibliography{references}
 \addcontentsline{toc}{chapter}{References}
 \bibliographystyle{plainnat}
+% to show glossary
+\printglossary[title=Glossaire]
 \include{endmatter/colophon}
 
 \end{document}
