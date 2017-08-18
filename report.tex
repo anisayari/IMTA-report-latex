@@ -2,19 +2,16 @@
 %!TEX encoding = UTF-8 Unicode
 
 \documentclass{IMTA-report}
-
-%add glossary
+%make glossary, should be placed before \begin{document}
 \makeglossaries
-\newglossaryentry{glossary}{
-name={glossary},description={An example of glossary}}
-
 \begin{document}
-
 % the front matter
 \input{frontmatter/coverpage}
 \maketitle
 \copyrightpage
 \abstractpage
+%show glossary
+\printglossary[title=Glossaire,nonumberlist]
 \tableofcontents
 %\authorlist
 \listoffigures
@@ -35,8 +32,6 @@ name={glossary},description={An example of glossary}}
 \bibliography{references}
 \addcontentsline{toc}{chapter}{References}
 \bibliographystyle{plainnat}
-% to show glossary
-\printglossary[title=Glossaire]
 \include{endmatter/colophon}
 
 \end{document}
