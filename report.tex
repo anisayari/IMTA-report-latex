@@ -2,14 +2,17 @@
 %!TEX encoding = UTF-8 Unicode
 
 \documentclass{IMTA-report}
-
+%make glossary, should be placed before \begin{document}
+\loadglsentries{chapters/glossary}
+\makeglossaries
 \begin{document}
-
 % the front matter
 \input{frontmatter/coverpage}
 \maketitle
 \copyrightpage
 \abstractpage
+%show glossary
+\printglossary[title=Glossaire,nonumberlist]
 \tableofcontents
 %\authorlist
 \listoffigures
