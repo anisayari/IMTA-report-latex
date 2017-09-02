@@ -34,12 +34,12 @@
 
 \RequirePackage[centertags]{amsmath}
 \RequirePackage{amssymb}
-\usepackage{glossaries}
 \RequirePackage[numbers, comma, sort&compress]{natbib}
 \RequirePackage[small, md, sc]{titlesec}
 \RequirePackage[tight,nice]{units}
 \RequirePackage{verbatim}
 \RequirePackage{numprint}
+\RequirePackage{glossaries}
 
 % colors
 \RequirePackage{color}
